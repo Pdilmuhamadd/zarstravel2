@@ -24,10 +24,10 @@
                             <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="travel_packages_id">Paket Travel</label>
-                                    <select name="travel_packages_id" required class="form-control">
+                                    <label for="travel_package_id">Paket Travel</label>
+                                    <select name="travel_package_id" required class="form-control">
                                         <option value="">Pilih Paket Travel</option>
-                                        @foreach ($travel_packages as $travel_package)
+                                        @foreach ($travel_package as $travel_package)
                                             <option value="{{ $travel_package->id }}">
                                                 {{ $travel_package->title }}
                                             </option>

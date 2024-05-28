@@ -32,9 +32,9 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        $travel_packages = TravelPackage::all();
+        $travel_package = TravelPackage::all();
         return view('pages.admin.gallery.create',[
-            'travel_packages' => $travel_packages
+            'travel_package' => $travel_package
         ]);
     }
 
@@ -75,11 +75,11 @@ class GalleryController extends Controller
     public function edit($id)
     {
         $item = Gallery::findOrFail($id);
-        $travel_packages = TravelPackage::all();
+        $travel_package = TravelPackage::all();
 
         return view('pages.admin.gallery.edit', [
             'item' => $item,
-            'travel_packages' => $travel_packages
+            'travel_package' => $travel_package
         ]);
     }
 
