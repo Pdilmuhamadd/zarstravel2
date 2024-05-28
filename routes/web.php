@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\HomeController@index')
     ->name('home');
 
-Route::get('/detail', 'App\Http\Controllers\DetailController@index')
+Route::get('/detail/{slug}', 'App\Http\Controllers\DetailController@index')
     ->name('detail');
 
 Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')
