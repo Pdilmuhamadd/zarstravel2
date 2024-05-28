@@ -19,7 +19,7 @@
                         </div>
                     @endif
 
-                    <div class="card shadow"></div>
+                    <div class="card shadow">
                         <div class="card-body">
                             <form action="{{ route('gallery.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Image</label>
-                                    <input type="file" class="form-control" name="Image" placeholder="Image"
+                                    <input type="file" class="form-control" name="image" placeholder="image"
                                     class="form-control">
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block">
