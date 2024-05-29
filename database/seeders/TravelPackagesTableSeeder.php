@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class TravelPackagesTableSeeder extends Seeder
+class TravelPackageTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
