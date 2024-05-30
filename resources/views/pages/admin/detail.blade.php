@@ -25,67 +25,35 @@
                 <div class="col-lg-8 pl-lg-0">
                     <div class="card card-details">
                     <h1>
-                        Nusa Penida
+                        {{ $item->title}}
                     </h1>
                     <p>
-                        Republic of Indonesia Raya
+                        {{ $item->location}}
                     </p>
+                    @if ($item->galleries->count())
                     <div class="gallery">
                         <div class="xzoom-container">
-                            <img src="{{url('frontend/images/details.png')}}"
+                            <img src="{{Storage::url($item->galleries->first()->image)}}"
                             class="xzoom"
                             id="xzoom-default"
-                            xoriginal="{{url('frontend/images/details.png')}}"/>
+                            xoriginal="{{Storage::url($item->galleries->first()->image)}}"/>
                         </div>
                         <div class="xzoom-thumbs">
-                            <a href="{{url('frontend/images/details-1.png')}}">
-                                <img src="{{url('frontend/images/details-1.png')}}"
-                                class="xzoom-gallery"
-                                width="128"
-                                xpreview="{url('frontend/images/details-1.png')}"/>
-                            </a>
-                            <a href="url ('frontend/images/details-2.png')">
-                                <img src="url ('frontend/images/details-2.png')"
-                                class="xzoom-gallery"
-                                width="128"
-                                xpreview="{{url('frontend/images/details-2.png')}}"/>
-                            </a>
-                            <a href="{{url('frontend/images/details-3.png')}}">
-                                <img src="{{url('frontend/images/details-3.png')}}"
-                                class="xzoom-gallery"
-                                width="128"
-                                xpreview="{{url('frontend/images/details-3.png')}}"/>
-                            </a>
-                            <a href="{{url('frontend/images/details-4.png')}}">
-                                <img src="{{url('frontend/images/details-4.png')}}"
-                                class="xzoom-gallery"
-                                width="128"
-                                xpreview="{{url('frontend/images/details-4.png')}}"/>
-                            </a>
-                            <a href="{{url('frontend/images/details-5.png')}}">
-                                <img src="{{url('frontend/images/details-5.png')}}"
-                                class="xzoom-gallery"
-                                width="128"
-                                xpreview="{{url('frontend/images/details-5.png')}}"/>
-                            </a>
+                            @foreach ($item->galleries as $gallery)
+                                <a href="{{Storage::url($gallery->image)}}">
+                                    <img src="{{Storage::url($gallery->image)}}"
+                                    class="xzoom-gallery"
+                                    width="128"
+                                    xpreview="{{Storage::url($gallery->image)}}">
+                                </a>
+                            @endforeach
                         </div>
                     </div>
+                    @endif
                     <h2>
                         Tentang wisata
                     </h2>
-                    <p>
-                        Selamat datang di Nusa Penida, pulau cantik di tenggara Bali, Indonesia.
-                        Nikmati tebing curam, pantai terpencil, dan laut jernihnya.
-                        Jelajahi alam yang memesona, temui kehidupan laut yang beragam, dan rasakan ketenangan di sini.
-                        Dari matahari terbit hingga terbenam, setiap momen di Nusa Penida adalah petualangan tak terlupakan.
-                        Mari nikmati keajaiban alamnya!
-                    </p>
-                    <p>
-                    Nusa Penida adalah sebuah pulau yang terletak di sebelah tenggara dari pulau Bali, Indonesia.
-                    Pulau ini merupakan bagian dari gugusan Kepulauan Nusa, bersama dengan Nusa Lembongan dan Nusa Ceningan.
-                    Nusa Penida terpisah dari Bali oleh Selat Badung.
-                    Jaraknya sekitar 20 kilometer dari Pelabuhan Sanur di Bali.
-                    </p>
+                    {!! $item->about !!}
                 </div>
                 <div class="features row">
                     <div class="col-md-4">
@@ -98,7 +66,7 @@
                                     Featured Event
                                 </h3>
                                 <p>
-                                    Tari Kecak
+                                    {{$item->featured_event}}
                                 </p>
                             </div>
                         </div>
@@ -113,7 +81,7 @@
                                     Language
                                 </h3>
                                 <p>
-                                    Bahasa Indonesia
+                                    {{$item->language}}
                                 </p>
                             </div>
                             </div>
@@ -128,7 +96,7 @@
                                     Foods
                                 </h3>
                                 <p>
-                                    Local Foods
+                                    {{$item->foods}}
                                 </p>
                             </div>
                         </div>
@@ -162,7 +130,7 @@
                                     Date of departure
                                 </th>
                                 <td width="50%" class="text-right">
-                                    12 March, 2024
+                                    {{\Carbon\Carbon::create($item->date_of_departure)->format('F n, Y')}}
                                 </td>
                             </tr>
                             <tr>
@@ -170,7 +138,7 @@
                                     Duration
                                 </th>
                                 <td width="50%" class="text-right">
-                                    3 days
+                                    {{$item->duration}}
                                 </td>
                             </tr>
                             <tr>
@@ -178,7 +146,7 @@
                                     Type
                                 </th>
                                 <td width="50%" class="text-right">
-                                    Open Trip
+                                    {{$item->type}}
                                 </td>
                             </tr>
                             <tr>
@@ -186,15 +154,24 @@
                                     Prices
                                 </th>
                                 <td width="50%" class="text-right">
-                                    Rp.1.000.000 / org
+                                    Rp.{{$item->price}},00 / org
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="join-container">
-                        <a href="{{url('checkout')}}" class="btn btn-block btn-join-now mt-3 py-2">
-                            Join Now
-                        </a>
+                        @auth
+                        	<form action="{{route('checkout-process', $item->id)}}" method="POST">
+                                @csrf
+                                <button class="btn btn-block btn-join-now mt-3 py-2" type="submit">
+                                    Join Now
+                                </button>
+                        @endauth
+                        @guest
+                            <a href="{{url('login')}}" class="btn btn-block btn-join-now mt-3 py-2">
+                                Login or Register to Join
+                            </a>
+                        @endguest
                     </div>
                 </div>
             </div>
