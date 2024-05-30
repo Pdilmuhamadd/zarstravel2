@@ -17,26 +17,26 @@ class GalleriesTableSeeder extends Seeder
     {
         DB::table('galleries')->insert([
             [
-                'travel_package_id' => 1,
-                'image' => 'public\frontend\images\popular-1.jpg',
+                'travel_packages_id' => 1,
+                'image' => 'frontend/img/popular-1.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'travel_package_id' => 2,
-                'image' => 'public\frontend\images\popular-2.jpg',
+                'travel_packages_id' => 2,
+                'image' => 'frontend/img/popular-2.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'travel_package_id' => 3,
-                'image' => 'public\frontend\images\popular-3.jpg',
+                'travel_packages_id' => 3,
+                'image' => 'frontend/img/K3ie71guSMVWF8CzDq5bDo0VCNaNBdPRnaYIjotC.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'travel_package_id' => 4,
-                'image' => 'public\frontend\images\popular-4.jpg',
+                'travel_packages_id' => 4,
+                'image' => 'frontend/img/MNvIB6YX6giLyy7PqHg6Po5Kfsuqg9AZdj16D9Aa.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

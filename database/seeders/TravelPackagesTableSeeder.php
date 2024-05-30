@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class TravelPackageTableSeeder extends Seeder
+class TravelPackagesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,7 @@ class TravelPackageTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('travel_package')->insert([
+        DB::table('travel_packages')->insert([
             [
                 'title' => 'DERATAN, BALI',
                 'slug' => Str::slug('DERATAN, BALI'),
