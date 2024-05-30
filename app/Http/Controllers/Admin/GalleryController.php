@@ -48,7 +48,7 @@ class GalleryController extends Controller
     {
         $data = $request->all();
         $data['image'] = $request->file('image')->store(
-            'frontend/images', 'public'
+            'assets/gallery', 'public'
         );
 
         Gallery::create($data);
@@ -94,7 +94,7 @@ class GalleryController extends Controller
     {
         $data = $request->all();
         $data['image'] = $request->file('image')->store(
-            'frontend/images', 'public'
+            'assets/gallery', 'public'
         );
 
         $item = Gallery::findOrFail($id);

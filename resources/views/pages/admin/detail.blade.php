@@ -109,15 +109,15 @@
                             Member are going
                         </h2>
                         <div class="members my-2">
-                            <img src="frontend/images/member-1.png"
+                            <img src="{{url('frontend/images/member-1.png')}}"
                             class="member-image mr-1" />
-                            <img src="frontend/images/member-2.png"
+                            <img src="{{url('frontend/images/member-2.png')}}"
                             class="member-image mr-1" />
-                            <img src="frontend/images/member-3.png"
+                            <img src="{{url('frontend/images/member-3.png')}}"
                             class="member-image mr-1" />
-                            <img src="frontend/images/member-4.png"
+                            <img src="{{url('frontend/images/member-4.png')}}"
                             class="member-image mr-1" />
-                            <img src="frontend/images/member-5.png"
+                            <img src="{{url('frontend/images/member-5.png')}}"
                             class="member-image mr-1" />
                         </div>
                         <hr />

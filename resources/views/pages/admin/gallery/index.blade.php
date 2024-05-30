@@ -16,20 +16,19 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" width="100%" cellspacing="0">
-                                    <head>
+                                    <thead>
                                         <tr>
                                             <th>ID</th>
                                             <th>Travel</th>
                                             <th>Gambar</th>
                                             <th>Action</th>
                                         </tr>
-                                    </head>
-                                    <body>
+                                    </thead>
+                                    <tbody>
                                         @forelse ($items as $item)
                                         <tr>
                                             <td>{{$item->id}}</td>
                                             <td>{{$item->travel_package->title}}</td>
-                                            <td>{{$item->location}}</td>
                                             <td>
                                                 <img src="{{Storage::url($item->image)}}" alt="" style="width: 150px" class="img-thumbnail"/>
                                             </td>
@@ -53,7 +52,7 @@
                                                 </td>
                                             </tr>
                                         @endforelse
-                                    </body>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
