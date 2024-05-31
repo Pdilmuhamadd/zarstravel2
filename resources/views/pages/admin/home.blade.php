@@ -68,6 +68,9 @@
                                 <br />
                                 before in this world
                             </p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section class="section-popular-content" id="popularContent">
