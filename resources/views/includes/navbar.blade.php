@@ -1,7 +1,7 @@
     <!-- Navbar -->
     <div class="container">
         <nav class="row navbar-expand-lg navbar-light bg-white">
-            <a href="#" class="navbar-brand">
+            <a href="{{url('/')}}" class="navbar-brand">
                 <img src="{{url('frontend/images/logo.png')}}" alt="logo"/>
             </a>
             <button class="navbar-toggler navbar-toggler-right"
@@ -15,10 +15,10 @@
             <div class="collapse navbar-collapse" id="navb">
                 <ul class="navbar-nav ml-auto mr-3">
                     <li class="nav-item mx-md-2">
-                        <a href="index.html" class="nav-link active">Home</a>
+                        <a href="{{url('/')}}" class="nav-link active">Home</a>
                     </li>
                     <li class="nav-item mx-md-2">
-                        <a href="details.html" class="nav-link">Paket Travel</a>
+                        <a href=#popular class="nav-link">Paket Travel</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="checkout.html" class="nav-link dropdown-toggle" id="navbardrop"
@@ -33,7 +33,7 @@
                     </div>
                     </li>
                     <li class="nav-item mx-md-2">
-                        <a href="#" class="nav-link">Testimonial</a>
+                        <a href="#testimoniContent" class="nav-link">Testimonial</a>
                     </li>
                 </ul>
 
