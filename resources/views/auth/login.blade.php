@@ -51,6 +51,14 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <div class="col-md-6 offset-md-4">
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                    {{ __('if you dont have an account, register here') }}
+                                </a>
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

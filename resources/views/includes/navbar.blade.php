@@ -18,39 +18,30 @@
                         <a href="{{url('/')}}" class="nav-link active">Home</a>
                     </li>
                     <li class="nav-item mx-md-2">
-                        <a href=#popular class="nav-link">Paket Travel</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="checkout.html" class="nav-link dropdown-toggle" id="navbardrop"
-                        data-toggle="dropdown"
-                        >
-                            Services
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Link</a>
-                        <a href="#" class="dropdown-item">Link</a>
-                        <a href="#" class="dropdown-item">Link</a>
-                    </div>
+                        <a href=/#popular class="nav-link">Paket Travel</a>
                     </li>
                     <li class="nav-item mx-md-2">
-                        <a href="#testimoniContent" class="nav-link">Testimonial</a>
+                        <a href="/#testimoniContent" class="nav-link">Testimonial</a>
                     </li>
                 </ul>
 
                 @guest
                     <!-- Mobile Button -->
-                <form class="form-inline d-sm-block d-md-none">
-                    <button class="btn btn-login my-2 my-sm-0 px-4" type="button" onclick="event.preventDefault(): location.href='{{url('login')}}';">
-                        Sign In
-                    </button>
-                 </form>
+                    <form class="form-inline d-sm-block d-md-none">
+                        <button class="btn btn-login my-2 my-sm-0 px-4" type="button" onclick="event.preventDefault(); location.href='{{url('login')}}';">
+                            Sign In
+                        </button>
+                    </form>
+
+
 
                  <!-- Desktop Button -->
-                 <form class="form-inline my-2 my-lg-0 d-none d-md-block">
-                     <button class="btn btn-login btn-navbar-right my-3 my-sm-0 px-4" type="button" onclick="event.preventDefault(): location.href='{{url('login')}}';">
-                         Sign In
-                     </button>
-                  </form>
+                    <form class="form-inline my-2 my-lg-0 d-none d-md-block">
+                        <button class="btn btn-login btn-navbar-right my-3 my-sm-0 px-4" type="button" onclick="event.preventDefault(); location.href='{{url('login')}}';">
+                            Sign In
+                        </button>
+                    </form>
+
                 @endguest
 
 
